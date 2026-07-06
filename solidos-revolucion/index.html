@@ -11,9 +11,9 @@
 
 <script>
 MathJax = {
-tex: {
-inlineMath: [['\\(','\\)'],['$','$']]
-}
+    tex: {
+        inlineMath: [['\\(','\\)'],['$','$']]
+    }
 };
 </script>
 
@@ -50,6 +50,31 @@ header{
     letter-spacing:4px;
 }
 
+.herramientas{
+    padding:20px 40px;
+}
+
+#buscador{
+    width:100%;
+    max-width:500px;
+    padding:12px;
+    font-size:16px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+#contenedorEjercicios{
+    padding:20px 40px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+    border-top:1px solid #ddd;
+    color:#666;
+}
+
 </style>
 
 </head>
@@ -59,12 +84,12 @@ header{
 <header>
 
 <div class="titulo">
-<h1>Banco de Ejercicios</h1>
-<h2>Sólidos de Revolución</h2>
+    <h1>Banco de Ejercicios</h1>
+    <h2>Sólidos de Revolución</h2>
 </div>
 
 <div class="logo">
-MAGM
+    MAGM
 </div>
 
 </header>
@@ -75,18 +100,6 @@ MAGM
 type="text"
 id="buscador"
 placeholder="Buscar ejercicio...">
-
-<select id="filtro">
-
-<option value="Todos">Todos los niveles</option>
-
-<option value="Básico">Básico</option>
-
-<option value="Intermedio">Intermedio</option>
-
-<option value="Avanzado">Avanzado</option>
-
-</select>
 
 </section>
 
