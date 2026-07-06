@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,7 +10,7 @@
 <script>
 MathJax = {
   tex: {
-    inlineMath: [['\\(','\\)'], ['$','$']]
+    inlineMath: [['\\(','\\)'],['$','$']]
   }
 };
 </script>
@@ -18,37 +19,56 @@ MathJax = {
 
 <style>
 
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
     font-family:Arial, Helvetica, sans-serif;
     background:#f4f6f9;
 }
 
+/*======================
+ENCABEZADO
+=======================*/
+
 header{
-    background:white;
+    background:#1565C0;
+    color:white;
     padding:25px 40px;
     display:flex;
-    justify-content:space-between;
+    justify-content:center;
     align-items:center;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+    position:relative;
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+
+.titulo{
+    text-align:center;
 }
 
 .titulo h1{
     margin:0;
-    font-size:34px;
+    font-size:40px;
 }
 
 .titulo h2{
     margin:8px 0 0;
-    color:#666;
+    font-size:22px;
     font-weight:normal;
 }
 
 .logo{
-    font-size:55px;
+    position:absolute;
+    right:40px;
+    font-size:50px;
     font-weight:bold;
-    color:black;
 }
+
+/*======================
+CONTENIDO
+=======================*/
 
 main{
     max-width:900px;
@@ -57,43 +77,77 @@ main{
 }
 
 .card{
+
     background:white;
-    border-radius:12px;
+
     padding:25px;
+
+    border-radius:12px;
+
     margin-bottom:25px;
+
     box-shadow:0 3px 10px rgba(0,0,0,.08);
+
 }
 
 .card h2{
+
     margin-top:0;
+
+    color:#1565C0;
+
 }
 
 button{
+
     background:#1565C0;
+
     color:white;
+
     border:none;
-    padding:10px 18px;
+
+    padding:10px 22px;
+
     border-radius:6px;
+
     cursor:pointer;
-    font-size:15px;
+
+    font-size:16px;
+
 }
 
 button:hover{
+
     background:#0D47A1;
+
 }
 
 .respuesta{
+
     display:none;
+
     margin-top:18px;
-    padding:15px;
-    background:#eef6ff;
+
+    padding:18px;
+
+    background:#EEF5FF;
+
     border-left:5px solid #1565C0;
+
 }
 
+/*======================
+PIE
+=======================*/
+
 footer{
+
     text-align:center;
-    padding:25px;
+
     color:#666;
+
+    padding:25px;
+
 }
 
 </style>
@@ -105,12 +159,17 @@ footer{
 <header>
 
 <div class="titulo">
+
 <h1>Banco de Ejercicios</h1>
+
 <h2>Sólidos de Revolución</h2>
+
 </div>
 
 <div class="logo">
+
 MAGM
+
 </div>
 
 </header>
@@ -122,22 +181,24 @@ MAGM
 <h2>Ejercicio 1</h2>
 
 <p>
+
 Calcula el volumen del sólido generado al girar la región limitada por
 
 \[
-y=x^2,\qquad 0\le x\le 1
+y=x^2,\qquad 0\le x\le1
 \]
 
 alrededor del eje \(x\).
+
 </p>
 
 <button onclick="mostrar('r1')">
-Mostrar solución
+
+Respuesta
+
 </button>
 
 <div class="respuesta" id="r1">
-
-<p><strong>Solución</strong></p>
 
 \[
 V=\pi\int_0^1(x^2)^2dx
@@ -176,12 +237,12 @@ alrededor del eje \(x\).
 </p>
 
 <button onclick="mostrar('r2')">
-Mostrar solución
+
+Respuesta
+
 </button>
 
 <div class="respuesta" id="r2">
-
-<p><strong>Solución</strong></p>
 
 \[
 V=\pi\int_0^4(\sqrt{x})^2dx
@@ -238,4 +299,4 @@ MathJax.typesetPromise();
 </script>
 
 </body>
-</html>
+</html>   
