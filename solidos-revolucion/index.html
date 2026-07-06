@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Banco de Ejercicios | Sólidos de Revolución</title>
 
-<link rel="stylesheet" href="style.css">
-
 <script>
 MathJax = {
-    tex: {
-        inlineMath: [['\\(','\\)'],['$','$']]
-    }
+  tex: {
+    inlineMath: [['\\(','\\)'], ['$','$']]
+  }
 };
 </script>
 
-<script defer
-src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <style>
 
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f6f9;
+}
+
 header{
+    background:white;
+    padding:25px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:25px 40px;
-    border-bottom:2px solid #ddd;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
 }
 
 .titulo h1{
@@ -37,41 +39,60 @@ header{
 }
 
 .titulo h2{
-    margin:5px 0 0;
-    font-size:22px;
+    margin:8px 0 0;
+    color:#666;
     font-weight:normal;
-    color:#555;
 }
 
 .logo{
-    font-size:60px;
+    font-size:55px;
     font-weight:bold;
-    color:#000;
-    letter-spacing:4px;
+    color:black;
 }
 
-.herramientas{
-    padding:20px 40px;
+main{
+    max-width:900px;
+    margin:40px auto;
+    padding:0 20px;
 }
 
-#buscador{
-    width:100%;
-    max-width:500px;
-    padding:12px;
-    font-size:16px;
-    border:1px solid #ccc;
-    border-radius:8px;
+.card{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
 }
 
-#contenedorEjercicios{
-    padding:20px 40px;
+.card h2{
+    margin-top:0;
+}
+
+button{
+    background:#1565C0;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+button:hover{
+    background:#0D47A1;
+}
+
+.respuesta{
+    display:none;
+    margin-top:18px;
+    padding:15px;
+    background:#eef6ff;
+    border-left:5px solid #1565C0;
 }
 
 footer{
     text-align:center;
-    padding:20px;
-    margin-top:30px;
-    border-top:1px solid #ddd;
+    padding:25px;
     color:#666;
 }
 
@@ -84,38 +105,137 @@ footer{
 <header>
 
 <div class="titulo">
-    <h1>Banco de Ejercicios</h1>
-    <h2>Sólidos de Revolución</h2>
+<h1>Banco de Ejercicios</h1>
+<h2>Sólidos de Revolución</h2>
 </div>
 
 <div class="logo">
-    MAGM
+MAGM
 </div>
 
 </header>
 
-<section class="herramientas">
+<main>
 
-<input
-type="text"
-id="buscador"
-placeholder="Buscar ejercicio...">
+<div class="card">
 
-</section>
+<h2>Ejercicio 1</h2>
 
-<section id="contenedorEjercicios">
+<p>
+Calcula el volumen del sólido generado al girar la región limitada por
 
-</section>
+\[
+y=x^2,\qquad 0\le x\le 1
+\]
+
+alrededor del eje \(x\).
+</p>
+
+<button onclick="mostrar('r1')">
+Mostrar solución
+</button>
+
+<div class="respuesta" id="r1">
+
+<p><strong>Solución</strong></p>
+
+\[
+V=\pi\int_0^1(x^2)^2dx
+\]
+
+\[
+=\pi\int_0^1x^4dx
+\]
+
+\[
+=\pi\left[\frac{x^5}{5}\right]_0^1
+\]
+
+\[
+\boxed{V=\frac{\pi}{5}}
+\]
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Ejercicio 2</h2>
+
+<p>
+
+Calcula el volumen del sólido generado al girar
+
+\[
+y=\sqrt{x},\qquad 0\le x\le4
+\]
+
+alrededor del eje \(x\).
+
+</p>
+
+<button onclick="mostrar('r2')">
+Mostrar solución
+</button>
+
+<div class="respuesta" id="r2">
+
+<p><strong>Solución</strong></p>
+
+\[
+V=\pi\int_0^4(\sqrt{x})^2dx
+\]
+
+\[
+=\pi\int_0^4x\,dx
+\]
+
+\[
+=\pi\left[\frac{x^2}{2}\right]_0^4
+\]
+
+\[
+\boxed{V=8\pi}
+\]
+
+</div>
+
+</div>
+
+</main>
 
 <footer>
 
-<p>
-© 2026 Banco de ejercicios de Cálculo Integral
-</p>
+© 2026 MAGM | Banco de Ejercicios de Cálculo Integral
 
 </footer>
 
-<script src="script.js"></script>
+<script>
+
+function mostrar(id){
+
+let x=document.getElementById(id);
+
+if(x.style.display==="block"){
+
+x.style.display="none";
+
+}else{
+
+x.style.display="block";
+
+}
+
+if(window.MathJax){
+
+MathJax.typesetPromise();
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
